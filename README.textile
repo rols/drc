@@ -1,0 +1,169 @@
+Git repository for the "DRC":http://www.spinfo.phil-fak.uni-koeln.de/forschung-drc.html project (Digital Romansch Chrestomathy).
+
+h1. Beta 7 (2011 December 15)
+
+Beta 7 (tag: b7) adds new features to both the editor and the portal: in the editor, it is now possible to show only incomplete (open) pages. The editor will also return to the last edit position of the user logging in. The portal now allows browsing of the plain text (in addition to text downloads), as well as searching in comments and tags. This version also fixes various UI and data issues, and adds a basic UI testing setup. For a full list of changes see the "commits":https://github.com/spinfo/drc/commits/master. You can visit the portal and sign up at "http://www.crestomazia.ch":http://www.crestomazia.ch.
+
+h1. Beta 6 (2011 November 14)
+
+Beta 6 (tag: b6) contains a codebase that was backported from Eclipse 4.x to Eclipse 3.x to allow single-sourcing of the RCP desktop variant and a web variant based on RAP. The Tycho build (@mvn clean install@ in the repo root) creates the RCP application (in @de.uni_koeln.ub.drc.rcp/target@):
+
+!http://i39.tinypic.com/x65fo.png!
+
+It also creates a WAR that can be deployed to a servlet container (in @de.uni_koeln.ub.drc.ui.rap.feature/target@):
+
+!http://i44.tinypic.com/ztaump.png!
+
+For a full list of changes see the "commits":https://github.com/spinfo/drc/commits/master. You can get the editor from the "downloads":http://github.com/spinfo/drc/downloads page and visit the portal at "http://www.crestomazia.ch":http://www.crestomazia.ch.
+
+h1. Beta 5 (2011 September 23)
+
+Beta 5 (tag: b5) adds a new view for word-level annotation and various fixes in the editor. The portal now offers full text download of the current data and contains volume XIV. Search results in the portal have an improved KWIC layout and are now sorted chronologically. For a full list of changes see the "commits":https://github.com/spinfo/drc/commits/master. You can get the editor from the "downloads":http://github.com/spinfo/drc/downloads page and visit the portal at "http://www.crestomazia.ch":http://www.crestomazia.ch.
+
+h1. Beta 4 (2011 August 25)
+
+Beta 4 (tag: b4) adds more data, the ability to mark pages as done, and various bugfixes and minor improvements to the editor and portal. The portal now contains authentication to allow modification of user account data. For a full list of changes see the "commits":https://github.com/spinfo/drc/commits/master. You can get the editor from the "downloads":http://github.com/spinfo/drc/downloads page and visit the portal at "http://www.crestomazia.ch":http://www.crestomazia.ch.
+
+!http://i53.tinypic.com/33y12f4.png!
+
+h1. Beta 3 (2011 June 30)
+
+Our third beta (tag: b3) is available. It adds more data, a complete portal site, full internationalization and Romansch localization for the editor and the portal, faster search based on a Lucene index, and more. New features are made available via internal updates, so in the future, we will release new "downloads":http://github.com/spinfo/drc/downloads for major updates only.
+
+!http://i52.tinypic.com/117abmw.png!
+
+The portal page, providing access to the data as well as information on the project and its users, is now live at "http://www.crestomazia.ch":http://www.crestomazia.ch
+
+!http://i52.tinypic.com/2zp89s5.png!
+
+h1. Beta 2 (2011 February 25)
+
+Our second beta (tag: b2) is "available for download":http://github.com/spinfo/drc/downloads (login: @anonymous@, empty pass to access a sandbox version of the data).
+
+!http://i53.tinypic.com/2d77hu8.png!
+
+You can also visit the new "portal page":http://hydra1.spinfo.uni-koeln.de for information on users, data, and to sign up to work on the real data (if you speak Romansch).
+
+!http://i51.tinypic.com/311tbfs.png!
+
+h1. Beta 2 - Milestone 4 (2011 February 18)
+
+h2. Overview
+
+Beta 2 milestone 4 (tag: b2-m4) uses the latest Eclipse 4 version (4.1M5), adds internationalization as well as German and partial Romansch localization, and fixes a very central issue with highlighting in the new volumes (by using large images internally which are scaled down in the editor). This milestone also improves layout and functionality of the portal, fixes issues with displaying user data, and adds basic pattern-based auto correction.
+
+h2. Dependencies and Setup
+
+Dependencies and setup for the editor and the portal have not changed (see below).
+
+h1. Beta 2 - Milestone 3 (2011 January 28)
+
+h2. Overview
+
+Beta 2 milestone 3 (tag: b2-m3) improves data handling and chapter navigation in the editor. It also adds some minor UI improvements. The main new feature is the introduction of a Web portal based on the "Play":http://www.playframework.org/ framework. The initial portal provides some information about the project, basic user statistics, and a sign up page (see folder @drcp/@).
+
+h2. Dependencies and Setup
+
+Dependencies and setup for the editor have not changed (see below). To run the portal application, install the "Play framework":http://www.playframework.org/documentation/1.1.1/guide1#aInstallingthePlayframeworka and its "Scala module":http://www.playframework.org/modules/scala and run @play start@ in the @drcp/@ folder. The application should then be running at @localhost:9000@.
+
+h1. Beta 2 - Milestone 2 (2010 December 23)
+
+h2. Overview
+
+Beta 2 milestone 2 (tag: b2-m2) contains chapter navigation (based on METS metadata) and adds all 12 volumes of the Romansch Chrestomathy we currently have available. This version also adds the ability to search in comments, improves presentation of edit suggestions, contains minor fixes and is now based on Eclipse 4.1 (M3).
+
+h2. Dependencies and Setup
+
+Beta 2 milestone 2 requires Eclipse 4.1 (load the @drc.target@ definition in @de.uni_koeln.ub.drc.ui@) and "eXist-db":http://exist.sourceforge.net/ running locally on port 7777, see below for setup; other requirements are included. The full data can be "downloaded":http://hydra2.spinfo.uni-koeln.de/downloads/data/rom.zip and imported into the local DB by running @ant import@ in @de.uni_koeln.ub.drc@ (place the @rom/@ folder in @res/@). The Tycho build requires Maven 3 and can be executed in the repo root using @mvn clean install@.
+
+h1. Beta 2 - Milestone 1 (2010 November 26)
+
+h2. Overview
+
+Beta 2 milestone 1 (tag: b2-m1) contains bugfixes and visual tweaks, as well as various minor improvements like optimized DB access and memory usage, improved synchronization between users and special characters support in all text fields. The Tycho build now uses the 'eclipse-repository' packaging and the application updates itself on startup using the p2 API.
+
+h2. Dependencies and Setup
+
+Beta 2 milestone 1 requires Eclipse "4.0":http://download.eclipse.org/e4/downloads/drops/R-0.10-201007271415/index.html and "eXist-db":http://exist.sourceforge.net/ (running on our server or locally on port 7777, see below for setup); other requirements are included. The Tycho build requires Maven 3 and can be executed in the repo root using @mvn clean install@.
+
+h1. Beta 1 (2010 October 15)
+
+Our first beta (tag: b1) is "available for download":http://github.com/spinfo/drc/downloads (login: @anonymous@, empty pass).
+
+!http://i53.tinypic.com/10rpog3.png!
+
+h1. Beta 1 - Milestone 5 (2010 September 30)
+
+h2. Overview
+
+Beta 1 milestone 5 (tag: b1-m5) adds a new view to enter special characters, next/previous page browsing, page tagging and comments. The view arrangement is now fully customizable. Milestone 5 also introduces various minor UI improvements and bugfixes, like search result and page details or improved error handling and progress notification. The code is now built by Hudson using Tycho (see link above for downloads of nightly builds).
+
+!http://i54.tinypic.com/ouxxm9.png!
+
+h2. Dependencies and Setup
+
+Beta 1 milestone 5 requires Eclipse "4.0":http://download.eclipse.org/e4/downloads/drops/R-0.10-201007271415/index.html and "eXist-db":http://exist.sourceforge.net/ (running on our server or locally on port 8080, see below for setup); other requirements are included. The Tycho build requires Maven 3 and can be executed in the repo root using @mvn clean package@. See below for general instructions on building and running.
+
+h1. Beta 1 - Milestone 4 (2010 August 28)
+
+h2. Overview
+
+Beta 1 milestone 4 (tag: b1-m4) replaces the initial prototypical persistence in zip files with an XML DB (eXist-db). This milestone includes all pages for the first volume, based on improved initial OCR. It supports merging of pages edited by different users and adds several UI improvements, like modification dates, page mapping and synchronized highlighting in the image and the edit area.
+
+!http://i35.tinypic.com/a4972h.png!
+
+h2. Dependencies and Setup
+
+Beta 1 milestone 4 requires Eclipse "4.0":http://download.eclipse.org/e4/downloads/drops/R-0.10-201007271415/index.html and "eXist-db":http://exist.sourceforge.net/ (install, change port from 8080 to 8888 in @tools/jetty/etc/jetty.xml@, run @bin/startup.sh@, "import":http://exist-db.org/backup.html#N103B1 our "DB backup":http://hydra4.spinfo.uni-koeln.de/existdb.zip); other requirements (e.g. Scala 2.8 final, PdfBox) are included in the @lib@ folder in the @de.uni_koeln.ub.drc@ bundle. See below for general instructions on building and running.
+
+h1. Beta 1 - Milestone 3 (2010 July 17)
+
+h2. Overview
+
+Beta 1 milestone 3 (tag: b1-m3) mainly adds multi-user support with user reputation and a voting system for corrections. It also introduces the ability to revert to a previous correction, a larger and improved presentation of the original document, more accurate word highlighting, as well as bugfixes and performance improvements.
+
+!http://i53.tinypic.com/3534e1e.png!
+
+h2. Dependencies and Setup
+
+Beta 1 milestone 3 requires Eclipse "4.0 RC1":http://download.eclipse.org/e4/downloads/drops/S-1.0RC1-201007011000/index.html; other requirements (e.g. Scala 2.8 final, PdfBox) are included in the @lib@ folder in the @de.uni_koeln.ub.drc@ bundle. See below for general instructions on building and running.
+
+h1. Beta 1 - Milestone 2 (2010 May 28)
+
+h2. Overview
+
+Beta 1 milestone 2 (tag: b1-m2) adds options for searching in the entire history, the original, or the latest form only, as well as a new word details view containing the edit history and edit suggestions for the current word. It also adds basic warnings about probable errors, as well as support for exporting pages as plain text files. Internal resources (scans, text, metadata) are now bundled in zip files.
+
+!http://i46.tinypic.com/2roicna.png!
+
+h2. Dependencies and Setup
+
+Beta 1 milestone 2 requires Eclipse "4.0 M6":http://download.eclipse.org/e4/downloads/drops/S-1.0M6-201005232015/index.html; other requirements (Scala 2.8 RC3, iText) are included in the @lib@ folder in the @de.uni_koeln.ub.drc@ bundle. See below for general instructions on building and running.
+
+h1. Beta 1 - Milestone 1 (2010 April 13)
+
+h2. Overview
+
+Beta 1 milestone 1 (tag: b1-m1) provides a basic local, single-user implementation of the DRC system. It features basic search and page selection, editing and persistence, word-based edit history and highlighting of the currently selected word in the original scan (see screenshot below).
+
+!http://i43.tinypic.com/micwah.png!
+
+h2. Dependencies and Setup
+
+* Beta 1 milestone 1 requires Eclipse "4.0 M4":http://download.eclipse.org/e4/downloads/drops/S-1.0M4-201002271345/index.html; other requirements (Scala, iText) are included in the @lib@ folder in the @de.uni_koeln.ub.drc@ bundle. See below for general instructions on building and running.
+
+h1. General Documentation
+
+h2. Building and Running
+
+* Core components (Scala) are built and deployed with Ant to be used in the UI (Eclipse 4); see the @build.xml@ file in the @de.uni_koeln.ub.drc@ bundle
+* After cloning, rename the @accounts.properties.template@ file in @de.uni_koeln.ub.drc.ui@ to @accounts.properties@
+* Tests for the core components can be run with Ant, UI tests by running the @AllTestsSuite@ in the @de.uni_koeln.ub.drc.ui@ bundle (Run As > Plug-in Test)
+* The UI can be started by running the @drc.ui.product@ in the @de.uni_koeln.ub.drc.ui@ bundle (Run As > Eclipse Application)
+
+h2. Other Resources
+
+* "Requirements":drc/tree/master/de.uni_koeln.ub.drc/doc/requirements.textile
+* "Architecture":drc/tree/master/de.uni_koeln.ub.drc/doc/architecture.textile
+* "Technology":drc/tree/master/de.uni_koeln.ub.drc/doc/technology.textile
+* "ANDP":drc/tree/master/de.uni_koeln.ub.drc/doc/andp.textile

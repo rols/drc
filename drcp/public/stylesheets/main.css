@@ -1,0 +1,127 @@
+html,body {
+  background: #FFFFFF !important;
+  font-family: Helvetica, Arial, Sans !important;
+  font-size: 11pt;
+}
+
+body {
+  width: 950px;
+  padding: 0 30px;
+  margin: auto;
+}
+
+#header {
+  /* background: yellow; */
+}
+
+#main {
+  padding-bottom: 120px; /* Height of the footer */
+  /* background: gray; */
+}
+
+#left {
+  float: left;
+  width: 48%;
+  /* background: green; */
+}
+
+#right {
+  float: right;
+  width: 48%;
+  /* text-align: right; /* depends on element width */
+  /* background: red; */
+}
+
+#footer {
+  padding-top: 20px;
+  clear: both;
+  width: 950px;
+  height: 120px; /* Height of the footer */
+  /* background: lightblue; */
+}
+
+table {
+	border-collapse: collapse;
+	width:100%;
+}
+
+table.form,th.form,td.form {
+	border: 0px;
+	text-align: left;
+	padding-left: 3px;
+	padding-right: 10px;
+	width: 300px;
+}
+
+table,th,td {
+	border: 0px;
+	border-bottom: 1px solid lightgray;
+	text-align: left;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+td.previous,td.hi,td.following {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+td.previous {
+	text-align: right;
+}
+
+td.following {
+	text-align: left;
+}
+
+td.hi {
+	text-align: center;
+}
+
+img {
+	border: 1px solid lightgray;
+}
+
+img.floatRight { 
+    float: right; 
+    margin-top: 50px; 
+    margin-left: 15px; 
+}
+
+h1,h2,h3 {
+	color: #869AB1;
+	margin-bottom: 15px;
+}
+
+a {
+	color: black;
+}
+
+a:hover {
+	color: gray;
+}
+
+hr {
+	border: 0px;
+	border-top: solid 1px gray;
+}
+
+p.error {
+	color: red;
+}
+
+p.attention {
+	color: darkgreen;
+}
+
+select.small {
+	width: 75px;
+}
+
+input.text {
+	width: 100px;
+}
+
+input.button {
+	width: 75px;
+}

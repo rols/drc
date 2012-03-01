@@ -1,0 +1,25 @@
+@(user:de.uni_koeln.ub.drc.data.User, link:String, page:de.uni_koeln.ub.drc.data.Page, meta:de.uni_koeln.ub.drc.util.MetsTransformer)(implicit session:play.mvc.Scope.Session)
+@import play.i18n.Messages._
+@import de.uni_koeln.ub.drc.data._
+@main("crestomazia.ch") {
+<h1>@user.id</h1>
+@if(session.get("username")!=null){
+	<a href="@action(controllers.Application.edit)">@get("views.user.edit")</a>
+}
+<p>
+@Html(get("views.user.summary", 
+  user.reputation.toString, 
+  user.edits.toString, 
+  user.upvotes.toString, 
+  user.downvotes.toString, 
+  user.upvoted.toString, 
+  user.downvoted.toString))
+</p>
+<p>@Html(get("views.user.region")) @user.region</p>
+@if(link.endsWith(".png")){
+<p>@{val p = if(meta!=null) meta.label(page.number) else "n/a"; Html(get("views.user.last.edited", Index.Volumes(page.volume), p))}</p>
+<p><img src="@link" width="350px" /></p>
+} else {
+<p class="attention">@Html(get("views.user.start", "http://github.com/spinfo/drc/downloads"))</p>
+}
+}

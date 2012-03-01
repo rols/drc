@@ -1,0 +1,27 @@
+@(term:String, label:String, pages:Seq[controllers.Application.Hit], volume:String, field:String)
+@import play.i18n.Messages._
+@main("crestomazia.ch") {
+
+<h1>@Html(get("views.search.mode", term)) @if(volume != "0") { @Html(get("views.search.volume")) @label
+	} else { @Html(get("views.search.volumes")) } (@get(field))</h1>
+
+<p>
+@Html(get("views.search.result", pages.size.toString))
+</p>
+
+@if(pages.size > 0){
+<table>
+	@for(page<-pages){
+		<tr>
+			<td>@page.mappedVolume</td>
+			<td>@page.page</td>
+			<td class="previous">@page.before</td>
+			<td class="hi"><a href="@page.textLink">@page.term</a></td>
+			<td class="following">@page.after</td>
+			<td><a href="@page.imageLink">scan</a></td>
+		</tr>
+	}
+</table>
+}
+
+}
